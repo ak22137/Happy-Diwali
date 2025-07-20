@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Diwali</title>
+    <style>
+        body {
+            background: #111;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        pre {
+            font-size: 16px;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        .firework {
+            transition: color 0.3s;
+            font-weight: bold;
+        }
+
+        .ascii-art-row {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        #ascii-art-1,
+        #ascii-art-2 {
+            background: none;
+            margin: ;
+            padding: 0px;
+            min-width: 420px;
+        }
+
+        .centered-diwali {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #happy-diwali {
+            text-align: center;
+            margin: 0;
+        }
+
+        .flame {
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="centered-diwali">
+        <pre id="happy-diwali">
+
+  _    _                           _____ ()               _()
+ | |  | |                         |  __ \(_)             | (_)
+ | |__| | __ _ _ __  _ __  _   _  | |  | |___      ____ _| |_ 
+ |  __  |/ _` | '_ \| '_ \| | | | | |  | | \ \ /\ / / _` | | |
+ | |  | | {_| | |_} | |_] | |_| | | |__| | |\ V  V / {_| | | |
+ |_|  |_|\__,_| .__/| .__/ \__, | |_____/|_| \_/\_/ \__,_|_|_|
+              | |   | |     __/ |                             
+              |_|   |_|    |___/                              
+
+      </pre>
+    </div>
+    <div class="ascii-art-row">
+        <pre id="ascii-art-1">
+              * *                     -:-             *  *  *
+            *'*:,'*        *  *  *     ' *           * \ | / *
+            *'*;*`*       *_* ! *_*       \          *__\:/__*
+             `,:*'         *_\!/_*                     *';`*      * * *
+             ,'             * ! *        ,*,      ..======..       *:*
+            ,                 *         ._!_*     ||::: : | .        *,
+     .====.,                  *           ;  .~.===: : : :|   ..===.
+     |.::'||      .=====.,    ..=======.~,   |"|: :|::::::|   ||:::|=====|
+  ___| :::|!__.,  |:::::|!_,   |: :: ::|"|l_l|"|:: |:;;:::|___!| ::|: : :|
+ |: :|::: |:: |!__|; :: |: |===::: :: :|"||_||"| : |: :: :|: : |:: |:::::|
+ |:::| _::|: :|:::|:===:|::|:::|:===F=:|"!/|\!"|::F|:====:|::_:|: :|::__:|
+ !_[]![_]_!_[]![]_!_[__]![]![_]![_][I_]!//_:_\![]I![_][_]!_[_]![]_!_[__]!
+ -----------------------------------"---''''```---"-----------------------
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |= _ _:_ _ =| _ _ _ _ _ _ _ _ _ _ _ _
+                                     |=    :    =|                
+_____________________________________L___________J________________________
+--------------------------------------------------------------------------
+      </pre>
+        <pre id="ascii-art-2">
+              * *                     -:-             *  *  *
+            *'*:,'*        *  *  *     ' *           * \ | / *
+            *'*;*`*       *_* ! *_*       \          *__\:/__*
+             `,:*'         *_\!/_*                     *';`*      * * *
+             ,'             * ! *        ,*,      ..======..       *:*
+            ,                 *         ._!_*     ||::: : | .        *,
+     .====.,                  *           ;  .~.===: : : :|   ..===.
+     |.::'||      .=====.,    ..=======.~,   |"|: :|::::::|   ||:::|=====|
+  ___| :::|!__.,  |:::::|!_,   |: :: ::|"|l_l|"|:: |:;;:::|___!| ::|: : :|
+ |: :|::: |:: |!__|; :: |: |===::: :: :|"||_||"| : |: :: :|: : |:: |:::::|
+ |:::| _::|: :|:::|:===:|::|:::|:===F=:|"!/|\!"|::F|:====:|::_:|: :|::__:|
+ !_[]![_]_!_[]![]_!_[__]![]![_]![_][I_]!//_:_\![]I![_][_]!_[_]![]_!_[__]!
+ -----------------------------------"---''''```---"-----------------------
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |= _ _:_ _ =| _ _ _ _ _ _ _ _ _ _ _ _
+                                     |=    :    =|                
+_____________________________________L___________J________________________
+--------------------------------------------------------------------------
+      </pre>
+    </div>
+    <script>
+        // Function to wrap * and , in spans for a given pre
+        function wrapFireworksInPre(pre) {
+            let html = pre.textContent.replace(/([*,])/g, '<span class="firework">$1</span>');
+            pre.innerHTML = html;
+        }
+
+        wrapFireworksInPre(document.getElementById('ascii-art-1'));
+        wrapFireworksInPre(document.getElementById('ascii-art-2'));
+
+        // Function to wrap ( ) in spans with class 'flame'
+        function wrapFlamesInPre(pre) {
+            let html = pre.textContent.replace(/([()])/g, '<span class="flame">$1</span>');
+            pre.innerHTML = html;
+        }
+
+        wrapFlamesInPre(document.getElementById('happy-diwali'));
+
+        // Colors for fireworks
+        const colors = [
+            '#FF5252', '#FFD700', '#40C4FF', '#69F0AE', '#FF4081', '#FFEB3B', '#00E676', '#FF9800', '#7C4DFF', '#F44336'
+        ];
+        // Flame colors (orange, red shades)
+        const flameColors = [
+            '#FF9800', '#FF5722', '#FF6F00', '#FF3D00', '#FF1744', '#FF8A65', '#FF7043', '#FF5252', '#FFA726'
+        ];
+
+        function animateFireworks() {
+            const fireworks = document.querySelectorAll('.firework');
+            fireworks.forEach(span => {
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                span.style.color = color;
+            });
+            // Animate flames in happy-diwali
+            const flames = document.querySelectorAll('#happy-diwali .flame');
+            flames.forEach(span => {
+                const color = flameColors[Math.floor(Math.random() * flameColors.length)];
+                span.style.color = color;
+            });
+        }
+
+        setInterval(animateFireworks, 300);
+    </script>
+</body>
+
+</html>
